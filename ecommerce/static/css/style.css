@@ -1,0 +1,22 @@
+body
+{
+background-color:white;
+}
+.footer
+{
+height:50px;
+width:100%;
+background-color:gray;
+position:fixed;
+bottom:0;
+left:0;
+text-align:center;
+color:black;
+font-family: 'Oswald', sans-serif;
+padding:10px;
+}
+.navbar-brand
+{
+font-family: 'Mooli', sans-serif;
+color:#20c997!important;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src ="{{cat.image.url}}" style="height:650px;" width="100%">
+</div>
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <h3 class="text-center text-uppercase">{{cat.cname}}</h3>
+    <p style="text-align:justify;line-height:2">{{cat.description}}</p>
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <div class="row ms-5">
+        {% for i in p %}
+        <div class="col-sm-3" >
+            <div class="card " style="width:20rem;height:650px;">
+                {% if i.stock <= 0 %}
+  <img src="{{i.image.url}}" class="card-img-top border border-secondary border-5" alt="..." style="height:250px;opacity:0.5;">
+            {% else %}
+  <img src="{{i.image.url}}" class="card-img-top border border-secondary border-5" alt="..." style="height:250px;">
+            {% endif %}
+  <div class="card-body bg-dark border border-secondary border-5">
+    <h5 class="card-title text-light">{{i.pname}}</h5>
+    <p class="card-text text-light">{{i.description}}</p>
+      <p class="card-text text-danger">Price: {{i.price}}</p>
+    <a href="{% url 'shop:detial' i.pname %}" class="btn btn-primary">detials</a>
+  </div>
+</div>
+        </div>
+         {% endfor %}
+    </div>
+</div>
+{% endblock %}
